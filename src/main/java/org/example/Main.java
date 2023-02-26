@@ -1,23 +1,13 @@
 package org.example;
 
-import java.security.Principal;
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 public class Main {
     public static final byte MONTHS = 12;
     public static final byte PERCENT = 100;
     public static void main(String[] args) {
-        /*
-        principal : desired mortgage amount
-        annualInterest: annual interest rate
-        mortgageYears: period(years) time of the mortgage deal
-        montlyMorgage: monthly payment, variable of interest
-        //create scanner object
-        */
 
         int principal = (int)readNumber("Principal ", 1000,1_000_000);
         float annualInterest = (float) readNumber("please enter the interest rate ", 1,30);
@@ -71,9 +61,3 @@ public class Main {
         return monthlyMortgage;
     }
     }
-
-        /*
-        learnings:
-        avoid magic code(hard code), instead use constants like MONTHS_INS_YEAR, PERCENT ext
-        do not use magic names for variables like m1, r ext always use meaningful and descriptive names
-         */
