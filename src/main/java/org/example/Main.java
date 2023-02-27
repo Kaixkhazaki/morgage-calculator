@@ -14,14 +14,13 @@ public class Main {
         byte mortgageYears = (byte) readInput("please enter the period of morgage(years) ",1,40);
 
         printMortgage(principal,annualInterest,mortgageYears);
-        //printPaymentSchedule(principal,annualInterest,mortgageYears);
+        printPaymentSchedule(principal,annualInterest,mortgageYears);
         }
     public static void printMortgage(int principal, float annualInterest, byte mortgageYears){
         double monthlyMortgage =  calculateMortgage(principal, annualInterest, mortgageYears);
         System.out.println(monthlyMortgage);
         System.out.println("MORTGAGE monthly Payment");
         System.out.println("------------");
-        //System.out.println("your monthly payment for the mortgage for the sum of " + (int)principal +"$ with annual interest rate of "+(int)annualInterest+"% for "+(int)mortgageYears+" years is : " + NumberFormat.getCurrencyInstance(Locale.GERMANY).format(monthlyMortgage));
         System.out.println(String.format("your monthly payment for the mortgage for the sum of %d with annual interest rate of %f for %d years is %f ", principal,annualInterest, mortgageYears,monthlyMortgage));
     }
     public static void printPaymentSchedule(int principal, float annualInterest, byte mortgageYears){
@@ -30,7 +29,7 @@ public class Main {
         System.out.println("------------");
         for( short month=1; month <= mortgageYears*MONTHS; month++){
             double balance = calculateBalance(principal,annualInterest,mortgageYears,month);
-            System.out.println("remaining balance is "+ NumberFormat.getCurrencyInstance(Locale.GERMANY).format(balance));
+            System.out.println(String.format("remaining balance is %s", NumberFormat.getCurrencyInstance(Locale.GERMANY).format(balance)));
         }
     }
 
